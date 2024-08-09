@@ -21,7 +21,6 @@ from pathlib import Path
 mjs = '${SCRIPT_DIR}/original/PKIMetadata/2000/manifest.json'
 mjs = Path(mjs)
 dat = Path.read_text(mjs)
-print(dat)
 x = json.loads(dat)
 x['version'] = "2000"
 mjs.write_text(json.dumps(x))
