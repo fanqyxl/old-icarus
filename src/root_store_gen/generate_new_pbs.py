@@ -15,11 +15,13 @@ for a in sys.argv[2:-1:]:
     print(f"Registering CA from {a}")
     cas.append(a)
 outfile = sys.argv[-1]
+print(f'reading from: {sys.argv[1]}')
 print(f"Outputing to: {outfile}")
 out = open(outfile, 'wb')
 buf= open(sys.argv[1], 'rb')
 rs = crs_pb2.RootStore()
 rs.ParseFromString(buf.read())
+print(rs.trust_anchors)
 for ca in cas:
     with open(ca, 'rb') as file:
         print(f"Loading Certificate Authority {ca} into rootstore")

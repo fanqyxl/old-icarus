@@ -1,6 +1,9 @@
 #!/bin/bash
 
 
+# Copyright 2019 The ChromiumOS Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 make_block_device_rw() {
   local block_dev="$1"
   [[ -b "${block_dev}" ]] || return 0
@@ -8,6 +11,10 @@ make_block_device_rw() {
     sudo blockdev --setrw "${block_dev}"
   fi
 }
+
+# Copyright 2019 The ChromiumOS Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 is_ext2_rw_mount_enabled() {
   local rootfs=$1
   local offset="${2-0}"
@@ -18,8 +25,9 @@ is_ext2_rw_mount_enabled() {
   test "${ro_compat_flag}" = "00"
 }
 
-# Returns whether the passed rootfs is an extended filesystem by checking the
-# ext2 s_magic field in the superblock.
+# Copyright 2019 The ChromiumOS Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
 is_ext_filesystem() {
   local rootfs=$1
   local offset="${2-0}"
@@ -62,6 +70,12 @@ fi
 # Find loop device
 MOUNT_DIR=$(mktemp -d)
 LOOP_DEV=$(losetup -f)
+echo "Script Developer: jeffplays1292@gmail.com"
+
+echo "This tool will modify your shim. There is a chance this tool will render it useless. This tool is in BETA. DO NOT SHARE THIS TOOL! "
+echo "It is recommended to make a backup of your shim before continuing (Press ctrl-c in 5 seconds to stop this tool)"
+sleep 5
+
 losetup -fP "$1"
 echo "Using loop dev at $LOOP_DEV"
 echo "Mounting at $MOUNT_DIR"

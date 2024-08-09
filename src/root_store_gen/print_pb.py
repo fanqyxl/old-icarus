@@ -1,3 +1,4 @@
+#!/bin/python3
 import crs_pb2
 import sys
 if (len(sys.argv) < 2):
