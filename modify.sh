@@ -59,3 +59,19 @@ then
     exit 0
 fi
 
+# Find loop device
+MOUNT_DIR=$(mktemp -d)
+LOOP_DEV=$(losetup -f)
+losetup -fP "$1"
+echo "Using loop dev at $LOOP_DEV"
+echo "Mounting at $MOUNT_DIR"
+enable_rw_mount "$LOOP_DEV"p3
+mount -o rw "$LOOP_DEV"p3 "$MOUNT_DIR"
+mkdir -p "$MOUNT_DIR/usr/share/packeddata"
+cp -rvf "./out/." "$MOUNT_DIR/usr/share/packeddata"
+cp "inshim.sh" "$MOUNT_DIR/usr/bin/inshim.sh"
+umount $MOUNT_DIR
+sync
+sync
+sync
+echo "success!"
