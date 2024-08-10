@@ -24,7 +24,7 @@ rs.ParseFromString(buf.read())
 print(rs.trust_anchors)
 for ca in cas:
     with open(ca, 'rb') as file:
-        print(f"Loading Certificate Authority {ca} into rootstore")
+        print(f"""Loading Certificate Authority at path "{ca}" into rootstore""")
         der = file.read()
         next_trust_anchor = crs_pb2.TrustAnchor()
         next_trust_anchor.Clear()

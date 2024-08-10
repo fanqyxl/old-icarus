@@ -12,16 +12,19 @@ mkdir "${SCRIPT_DIR}"/out
 mkdir -p "${SCRIPT_DIR}"/out/PKIMetadata/2000/.
 cp -rvf "${SCRIPT_DIR}"/original/PKIMetadata/2000/. "${SCRIPT_DIR}"/out/PKIMetadata/2000
 rm -rvf "${SCRIPT_DIR}"out/PKIMetadata/2000/_metadata # verified contents not necessary
+rm -rvf "${SCRIPT_DIR}out/PKIMetadata/2000/"*.fingerprint
 python3 ./src/root_store_gen/generate_new_pbs.py "${SCRIPT_DIR}/original/PKIMetadata/2000/crs.pb" "$@" "${SCRIPT_DIR}/out/PKIMetadata/2000/crs.pb"
 # Modify version in manifest
 
-python3 <<EOF
+python3 <<EOF # Set version in manifest
 import json
-from pathlib import Path
+from pathlib import Path 
 mjs = '${SCRIPT_DIR}/original/PKIMetadata/2000/manifest.json'
 mjs = Path(mjs)
+newfile = Path('${SCRIPT_DIR}/out/PKIMetadata/2000/manifest.json')
 dat = Path.read_text(mjs)
 x = json.loads(dat)
-x['version'] = "2000"
+x['version'] = "2000" 
+print(json.dumps(x))
 mjs.write_text(json.dumps(x))
 EOF

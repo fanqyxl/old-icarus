@@ -1,8 +1,8 @@
 #!/bin/bash
-echo This script may be removed or disabled with discretion of google.
+echo This script may be removed or disabled later with discretion of google.
 
 # Search directory for versions
-HIGHESTVERSIONAPPARENTLY=$(find  $HOME/.config/google-chrome/PKIMetadata/ -maxdepth 1 -mindepth 1 -type d| head -n 1)
+HIGHESTVERSIONAPPARENTLY=$(find  "$HOME"/.config/google-chrome/PKIMetadata/ -maxdepth 1 -mindepth 1 -type d| head -n 1)
 
 #Let the user know what version we are on
 echo "$HIGHESTVERSIONAPPARENTLY"
