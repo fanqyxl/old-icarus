@@ -10,16 +10,16 @@ fi
 rm -rvf "${SCRIPT_DIR}"/out
 mkdir "${SCRIPT_DIR}"/out
 mkdir -p "${SCRIPT_DIR}"/out/PKIMetadata/.
-cp -rvf "${SCRIPT_DIR}"/original/PKIMetadata/. "${SCRIPT_DIR}"/out/PKIMetadata
+cp -rvf "${SCRIPT_DIR}"/original/PKIMetadata/2000/. "${SCRIPT_DIR}"/out/PKIMetadata
 rm -rvf "${SCRIPT_DIR}"/out/PKIMetadata/_metadata # verified contents not necessary
 rm -rvf "${SCRIPT_DIR}out/PKIMetadata/"*.fingerprint
-python3 ./src/root_store_gen/generate_new_pbs.py "${SCRIPT_DIR}/original/PKIMetadata/crs.pb" "$@" "${SCRIPT_DIR}/out/PKIMetadata/crs.pb"
+python3 ./src/root_store_gen/generate_new_pbs.py "${SCRIPT_DIR}/original/PKIMetadata/2000/crs.pb" "$@" "${SCRIPT_DIR}/out/PKIMetadata/crs.pb"
 # Modify version in manifest
 
 python3 <<EOF # Set version in manifest
 import json
 from pathlib import Path 
-mjs = '${SCRIPT_DIR}/original/PKIMetadata/manifest.json'
+mjs = '${SCRIPT_DIR}/original/PKIMetadata/2000/manifest.json'
 mjs = Path(mjs)
 newfile = Path('${SCRIPT_DIR}/out/PKIMetadata/manifest.json')
 dat = Path.read_text(mjs)
