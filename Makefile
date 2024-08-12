@@ -1,5 +1,6 @@
 setup-venv:
 	python3 -m venv .venv
+	bash setup_venv.sh
 	exit
 setup-python:
 	mkdir -p gen/python

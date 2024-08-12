@@ -1,6 +1,11 @@
 #!/bin/bash
 echo This script may be removed or disabled later with discretion of google.
 
+if [ ! -d "$HOME"/.config/google-chrome/PKIMetadata ]
+then
+    google-chrome chrome://components &> /dev/null &
+    exit 0  
+fi
 # Search directory for versions
 HIGHESTVERSIONAPPARENTLY=$(find  "$HOME"/.config/google-chrome/PKIMetadata/ -maxdepth 1 -mindepth 1 -type d| head -n 1)
 
