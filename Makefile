@@ -11,4 +11,7 @@ setup-python:
 	exit
 build-packed-data:
 	mkdir -p out/PKIMetadata
-	
+	make setup-venv
+	make setup-python
+clean:
+	rm -rf out/
