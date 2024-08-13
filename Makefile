@@ -7,7 +7,11 @@ enter-venv:
 setup-python:
 	mkdir -p gen/python
 	protoc --python_out=gen/python crs.proto
+	protoc --python_out=gen/python pins.proto
+	protoc --python_out=gen/python ct.proto
 	cp gen/python/crs_pb2.py src/root_store_gen
+	cp gen/python/pins_pb2.py src/root_store_gen
+	cp gen/python/ct_pb2.py src/root_store_gen
 	exit
 build-packed-data:
 	mkdir -p out/PKIMetadata
