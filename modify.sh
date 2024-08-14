@@ -73,14 +73,14 @@ LOOP_DEV=$(losetup -f)
 echo "Script Developer: jeffplays1292@gmail.com"
 
 echo "This tool will modify your shim. There is a chance this tool will render it useless. This tool is in BETA. DO NOT SHARE THIS TOOL! "
-echo "It is recommended to make a backup of your shim before continuing (Press ctrl-c in 5 seconds to stop this tool)"
+echo "It is recommended to make a backup of your shim before continuing (Press ctrl-c in 5 seconds to stop this tool and make a backup)"
 sleep 5
 
 losetup -fP "$1"
 echo "Using loop dev at $LOOP_DEV"
 echo "Mounting at $MOUNT_DIR"
-enable_rw_mount "$LOOP_DEV"p3
-mount -o rw "$LOOP_DEV"p3 "$MOUNT_DIR"
+enable_rw_mount "$LOOP_DEV"p1
+mount -o rw "$LOOP_DEV"p1 "$MOUNT_DIR"
 mkdir -p "$MOUNT_DIR/usr/share/packeddata"
 cp -rvf "./out/." "$MOUNT_DIR/usr/share/packeddata"
 cp "inshim.sh" "$MOUNT_DIR/usr/bin/inshim.sh"
