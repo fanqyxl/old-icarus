@@ -6,6 +6,7 @@ if [ "$(id -u)" -ne 0 ]
 then
     echo "Run this as root"
 fi
+mkdir -p /tmp/unencrypted
 cp /mnt/stateful_partition/usr/share/packeddata/. /tmp/unencrypted/ -rvf
 chown -R 1000 /mnt/stateful_partition/unencrypted/PKIMetadata
 umount /tmp
