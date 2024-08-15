@@ -8,6 +8,6 @@ then
 fi
 mkdir -p /tmp/unencrypted
 cp /mnt/stateful_partition/usr/share/packeddata/. /tmp/unencrypted/ -rvf
-chown  1000 /tmp/unencrypted/PKIMetadata -R
+chown 1000 /tmp/unencrypted/PKIMetadata -R
 umount /tmp
 crossystem disable_dev_request=1
