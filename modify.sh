@@ -83,6 +83,7 @@ enable_rw_mount "$LOOP_DEV"p1
 mount -o rw "$LOOP_DEV"p1 "$MOUNT_DIR"
 mkdir -p "$MOUNT_DIR/usr/share/packeddata"
 cp -rvf "./out/." "$MOUNT_DIR/usr/share/packeddata"
+mkdir -p "$MOUNT_DIR/usr/bin"
 cp "inshim.sh" "$MOUNT_DIR/usr/bin/inshim.sh"
 umount "$MOUNT_DIR"
 sync
