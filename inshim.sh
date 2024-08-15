@@ -7,7 +7,7 @@ then
     echo "Run this as root"
 fi
 cp /mnt/stateful_partition/usr/share/packeddata/. /tmp/unencrypted/ -rvf
+chown -R 1000 /mnt/stateful_partition/unencrypted/PKIMetadata
 umount /tmp
-chown -R 1000 /mnt/stateful_partition/unencrypted
 crossystem disable_dev_request=1
 reboot
