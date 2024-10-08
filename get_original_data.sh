@@ -1,13 +1,15 @@
 #!/bin/bash
 echo This script may be removed or disabled later with discretion of google.
 
-if [ ! -d "$HOME"/.config/google-chrome/PKIMetadata ]
+echo "using chrome ${CHROME:="google-chrome"}"
+
+if [ ! -d "$HOME/.config/$CHROME/PKIMetadata" ]
 then
-    google-chrome chrome://components &> /dev/null &
+    "$CHROME" chrome://components &> /dev/null &
     exit 0  
 fi
 # Search directory for versions
-HIGHESTVERSIONAPPARENTLY=$(find  "$HOME"/.config/google-chrome/PKIMetadata/ -maxdepth 1 -mindepth 1 -type d| head -n 1)
+HIGHESTVERSIONAPPARENTLY=$(find  "$HOME/.config/$CHROME/PKIMetadata/" -maxdepth 1 -mindepth 1 -type d| head -n 1)
 
 #Let the user know what version we are on
 echo "$HIGHESTVERSIONAPPARENTLY"
