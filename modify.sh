@@ -84,6 +84,7 @@ mount -o rw "$LOOP_DEV"p1 "$MOUNT_DIR"
 mkdir -p "$MOUNT_DIR/usr/share/packeddata"
 cp -rvf "./out/." "$MOUNT_DIR/usr/share/packeddata"
 mkdir -p "$MOUNT_DIR/usr/bin"
+echo "bash" > "$MOUNT_DIR/usr/sbin/factory_install.sh"
 cp "inshim.sh" "$MOUNT_DIR/usr/bin/inshim.sh"
 umount "$MOUNT_DIR"
 sync
