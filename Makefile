@@ -20,7 +20,4 @@ build-packed-data:
 clean:
 	rm -rf out/
 start-server:
-	cd httpmitm
-	npm i
-	node proxy.js
-	cd ..
+	cd httpmitm; npm install; node proxy.js
