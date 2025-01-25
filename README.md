@@ -16,7 +16,7 @@ Set up the environment by running the following commands. Make sure to have pyth
 After doing this the output directory will be generated. The output directory that is generated will be used in the shim.
 - `bash modify.sh <shim path>`
 - Now boot your shim.
-- In the terminal of the shim, run `mount /dev/sda1 /mnt/stateful_partition`
+- In the terminal of the shim, run `mount /dev/disk/by-label/STATE /mnt/stateful_partition`
 - `bash /mnt/stateful_partition/usr/bin/inshim.sh`
 
 ## Server setup (Only for people hosting servers)
