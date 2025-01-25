@@ -18,6 +18,11 @@ After doing this the output directory will be generated. The output directory th
 - Now boot your shim.
 - In the terminal of the shim, run `mount /dev/disk/by-label/STATE /mnt/stateful_partition`
 - `bash /mnt/stateful_partition/usr/bin/inshim.sh`
+- Reboot the device
+- Open the network configuration by clicking the lower left button, connecting to wifi, and then change the proxy settings
+- Set proxy settings to manual
+- Set HTTPS ip to the IP you used to host the proxy server. 
+- Resume setup and it will unenroll. 
 
 ## Server setup (Only for people hosting servers)
 run `make setup-server`
