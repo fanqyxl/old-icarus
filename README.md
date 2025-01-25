@@ -25,4 +25,5 @@ After doing this the output directory will be generated. The output directory th
 - Resume setup and it will unenroll. 
 
 ## Server setup (Only for people hosting servers)
+Requirements: npm, node  
 run `make start-server`
