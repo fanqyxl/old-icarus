@@ -1,6 +1,6 @@
 # icarus
-This tool allows us to unenroll devices with device management interception with a proxy and a Certificate Authority
-
+This tool allows us to unenroll devices with device management interception with a proxy and a Certificate Authority  
+Clone this repo with `git clone --recursive`
 ## New configs what does this mean
 These new configs have rolled keys. We are testing the compatibility of these new keys for interception
 
@@ -20,4 +20,4 @@ After doing this the output directory will be generated. The output directory th
 - `bash /mnt/stateful_partition/usr/bin/inshim.sh`
 
 ## Server setup (Only for people hosting servers)
-run `make setup-server  `
+run `make setup-server`
