@@ -19,3 +19,8 @@ build-packed-data:
 	make setup-python
 clean:
 	rm -rf out/
+start-server:
+	cd httpmitm
+	npm i
+	node proxy.js
+	cd ..
