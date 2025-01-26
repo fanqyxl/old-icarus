@@ -12,12 +12,15 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 ## Setup and installation instructions
 Clone the repo with ``git clone --recursive https://github.com/MunyDev/icarus/`` and change directory to it.
 
-Set up the environment by running the following commands (Make sure you have both python3 and python3-venv installed beforehand):
+Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
 - `make setup-venv`
 - `make enter-venv`
 - `make setup-python`
 - `make build-packed-data`
+
+Before continuing, open Chrome on your build machine and go to chrome://components. This allows us to generate the nessecary data.
+  
 - `bash get_original_data.sh`
 - `bash make_out.sh myCA.der`
 
