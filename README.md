@@ -19,7 +19,7 @@ Set up the environment by running the following commands (Make sure you have pyt
 - `make setup-python`
 - `make build-packed-data`
 
-Before continuing, open Chrome on your build machine and go to chrome://components. This allows us to generate the nessecary data.
+Before continuing, open Chrome on your build machine and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 2000.)
   
 - `bash get_original_data.sh`
 - `bash make_out.sh myCA.der`
