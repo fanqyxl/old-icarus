@@ -1,3 +1,4 @@
 [submodule "httpmitm"]
 	path = httpmitm
 	url = https://github.com/MunyDev/httpmitm
+	branch = main
