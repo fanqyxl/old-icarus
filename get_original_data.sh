@@ -23,7 +23,7 @@ mkdir -p original/PKIMetadata/2000
 
 #Copy latest version as base (idk if this is reliable)
 if [ "$HIGHESTVERSIONAPPARENTLY" != "" ]; then
-	cp -rvf "$HIGHESTVERSIONAPPARENTLY"/. original/PKIMetadata/2000
+    cp -rvf "$HIGHESTVERSIONAPPARENTLY"/. original/PKIMetadata/2000
 else
     echo "Variable HIGHESTVERSIONAPPARENTLY returned empty, failing."
     exit 1
