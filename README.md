@@ -38,4 +38,4 @@ run `make start-server`
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
 - [Archimax](https://github.com/EnterTheVoid-x86) - Cleaning up get_original_data.sh and inshim.sh + README changes
 - [r58Playz](https://github.com/r58Playz) - General bash script improvements
-- [Akane](https://github.com/genericness) - README changes
+- [Akane](https://github.com/genericness) - Help with SSL, general advice, and README changes
