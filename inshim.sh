@@ -48,3 +48,5 @@ chown 1000 /tmp/unencrypted/PKIMetadata -R
 rm /tmp/.developer_mode
 umount /tmp
 crossystem disable_dev_request=1 || fail "Failed to set disable_dev_request."
+read -p "Finished! Press enter to reboot."
+reboot
