@@ -36,6 +36,8 @@ Now boot the shim, and ICARUS will attempt to modify your stateful partition.
 Requirements: npm, node  
 Run `make start-server` to start your proxy, then continue with the instructions below.
 
+Do not use WSL to host a server!
+
 ## Setup and installation instructions, continued
 Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
 
