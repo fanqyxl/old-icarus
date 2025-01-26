@@ -1,6 +1,12 @@
 # icarus
 This tool allows us to unenroll devices with device management interception with a proxy and a Certificate Authority  
 Clone this repo with `git clone --recursive`
+
+## IMPORTANT NOTICE
+DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.
+ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.
+ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
+
 ## New configs what does this mean
 These new configs have rolled keys. We are testing the compatibility of these new keys for interception
 
