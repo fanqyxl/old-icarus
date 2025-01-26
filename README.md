@@ -40,6 +40,21 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 - Set HTTPS IP to the IP you used to host the proxy server. 
 - Resume setup and your device will unenroll. 
 
+## Troubleshooting
+
+<details>
+  <summary>During building, everything starting from root was copied into original!</summary>
+
+  Please run ``git pull`` on your local copy. This bug has been fixed.
+</details>
+
+<details>
+  <summary>My device says "Can't reach Google"!</summary>
+  
+  - Make sure your device and the server are connected to the same network
+  - If that didn't work, powerwash your device and re-run the modified shim, and keep the server running.
+</details>
+
 ## Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
 - [Archimax](https://github.com/EnterTheVoid-x86) - Cleaning up get_original_data.sh and inshim.sh + README changes
