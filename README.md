@@ -1,17 +1,19 @@
-# icarus
-This tool allows us to unenroll devices with device management interception with a proxy and a Certificate Authority  
-Clone this repo with `git clone --recursive`
+# ICARUS
+An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.  
 
-## IMPORTANT NOTICE
-DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.
-ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.
-ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
+> [!IMPORTANT]
+> DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.<br><br>
+> ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.<br><br>
+> ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
 
-## New configs what does this mean
-These new configs have rolled keys. We are testing the compatibility of these new keys for interception
+## New configs?
+"New configs" have rolled keys. We are testing the compatibility of these new keys for interception.
 
 ## Setup and installation instructions
-Set up the environment by running the following commands. Make sure to have python3 and python3-venv installed
+Clone the repo with ``git clone --recursive https://github.com/MunyDev/icarus/`` and change directory to it.
+
+Set up the environment by running the following commands (Make sure you have both python3 and python3-venv installed beforehand):
+
 - `make setup-venv`
 - `make enter-venv`
 - `make setup-python`
@@ -19,20 +21,28 @@ Set up the environment by running the following commands. Make sure to have pyth
 - `bash get_original_data.sh`
 - `bash make_out.sh myCA.der`
 
-After doing this the output directory will be generated. The output directory that is generated will be used in the shim.
-- `bash modify.sh <shim path>`
-- Now boot your shim.
-- In the terminal of the shim, run `mount /dev/disk/by-label/STATE /mnt/stateful_partition`
-- `bash /mnt/stateful_partition/usr/bin/inshim.sh`
-- Reboot the device
-- Open the network configuration by clicking the lower left button, connecting to wifi, and then change the proxy settings
-- Set proxy settings to manual
-- Set HTTPS ip to the IP you used to host the proxy server. 
-- Resume setup and it will unenroll. 
+After doing this the output directory (from here on reffered to as PKIMetadata) will be generated, which is the custom Certificate Authority.
 
-## Server setup (Only for people hosting servers)
+Now, to modify the shim with the generated PKIMetadata:
+
+- `bash modify.sh <shim path>`
+
+Now boot the shim, and in the terminal of the shim, run these commands:
+
+`mount /dev/disk/by-label/STATE /mnt/stateful_partition`
+
+`bash /mnt/stateful_partition/usr/bin/inshim.sh`
+
+### Server setup
 Requirements: npm, node  
-run `make start-server`
+Run `make start-server` to start your proxy, then continue with the instructions below.
+
+## Setup and installation instructions, continued
+Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower left button, connecting to wifi, and then change the proxy settings accordingly.
+
+- Set proxy settings to manual
+- Set HTTPS IP to the IP you used to host the proxy server. 
+- Resume setup and your device will unenroll. 
 
 ## Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
