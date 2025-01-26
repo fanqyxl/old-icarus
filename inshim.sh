@@ -1,6 +1,11 @@
 #!/bin/bash
 
-[ "$EUID" -ne 0 ] && echo "Run this as root"
+[ "$EUID" -ne 0 ] && fail "Not running as root, this shouldn't happen! Failing."
+
+fail() {
+	printf "%b\n" "$*" >&2 || :
+	sleep 1d
+}
 
 get_largest_cros_blockdev() {
 	local largest size dev_name tmp_size remo
@@ -31,15 +36,15 @@ format_part_number() {
 mount /dev/disk/by-label/STATE /mnt/stateful_partition/
 cros_dev="$(get_largest_cros_blockdev)"
 if [ -z "$cros_dev" ]; then
-	echo "No CrOS SSD found on device. Failing."
-    exit 1
+    echo "No CrOS SSD found on device. Failing."
+    sleep 1d
 fi
 stateful=$(format_part_number "$cros_dev" 1)
-mkfs.ext4 -F "$stateful" # This only wipes the stateful partition
-mount "$stateful" /tmp
+mkfs.ext4 -F "$stateful" || fail "Failed to wipe stateful." # This only wipes the stateful partition 
+mount "$stateful" /tmp || fail "Failed to mount stateful."
 mkdir -p /tmp/unencrypted
 cp /mnt/stateful_partition/usr/share/packeddata/. /tmp/unencrypted/ -rvf
 chown 1000 /tmp/unencrypted/PKIMetadata -R
 rm /tmp/.developer_mode
 umount /tmp
-crossystem disable_dev_request=1
+crossystem disable_dev_request=1 || fail "Failed to set disable_dev_request."
