@@ -88,6 +88,7 @@ umount "$MOUNT_DIR"
 enable_rw_mount "$LOOP_DEV"p3
 mount "$LOOP_DEV"p3 "$MOUNT_DIR"
 cp "inshim.sh" "$MOUNT_DIR/usr/sbin/factory_install.sh"
+chmod +x "$MOUNT_DIR/usr/sbin/factory_install.sh"
 
 umount "$MOUNT_DIR"
 sync
