@@ -12,12 +12,15 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 ## Setup and installation instructions
 Clone the repo with ``git clone --recursive https://github.com/MunyDev/icarus/`` and change directory to it.
 
-Set up the environment by running the following commands (Make sure you have both python3 and python3-venv installed beforehand):
+Set up the environment by running the following commands (Make sure you have python3, python3-venv, and protobuf installed beforehand):
 
 - `make setup-venv`
 - `make enter-venv`
 - `make setup-python`
 - `make build-packed-data`
+
+Before continuing, open Chrome on your build machine and go to chrome://components. Press CTRL + F and search for "PKIMetadata". Once you find it, press "Check for Updates". Make sure it says up-to-date before continuing (and that the version is below 2000.)
+  
 - `bash get_original_data.sh`
 - `bash make_out.sh myCA.der`
 
@@ -27,11 +30,7 @@ Now, to modify the shim with the generated PKIMetadata:
 
 - `bash modify.sh <shim path>`
 
-Now boot the shim, and in the terminal of the shim, run these commands:
-
-`mount /dev/disk/by-label/STATE /mnt/stateful_partition`
-
-`bash /mnt/stateful_partition/usr/bin/inshim.sh`
+Now boot the shim, and ICARUS will attempt to modify your stateful partition.
 
 ### Server setup
 Requirements: npm, node  
@@ -43,6 +42,21 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 - Set proxy settings to manual
 - Set HTTPS IP to the IP you used to host the proxy server. 
 - Resume setup and your device will unenroll. 
+
+## Troubleshooting
+
+<details>
+  <summary>During building, everything starting from root was copied into original!</summary>
+
+  Please run ``git pull`` on your local copy. This bug has been fixed.
+</details>
+
+<details>
+  <summary>My device says "Can't reach Google"!</summary>
+  
+  - Make sure your device and the server are connected to the same network
+  - If that didn't work, powerwash your device and re-run the modified shim, and keep the server running.
+</details>
 
 ## Credits
 - [MunyDev](https://github.com/MunyDev) - Creating this exploit
