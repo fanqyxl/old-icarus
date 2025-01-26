@@ -27,7 +27,11 @@ Now, to modify the shim with the generated PKIMetadata:
 
 - `bash modify.sh <shim path>`
 
-Now boot the shim, and ICARUS will attempt to modify your stateful partition.
+Now boot the shim, and in the terminal of the shim, run these commands:
+
+`mount /dev/disk/by-label/STATE /mnt/stateful_partition`
+
+`bash /mnt/stateful_partition/usr/bin/inshim.sh`
 
 ### Server setup
 Requirements: npm, node  
