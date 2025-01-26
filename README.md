@@ -37,7 +37,7 @@ Requirements: npm, node
 Run `make start-server` to start your proxy, then continue with the instructions below.
 
 ## Setup and installation instructions, continued
-Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower left button, connecting to wifi, and then change the proxy settings accordingly.
+Reboot the device. You'll boot into verified mode. Once you have your server running, open the network configuration by clicking the lower right button (it will show the date), connecting to wifi, and then change the proxy settings accordingly.
 
 - Set proxy settings to manual
 - Set HTTPS IP to the IP you used to host the proxy server. 
