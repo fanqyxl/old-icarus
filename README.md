@@ -70,6 +70,7 @@ Many people have been getting re-enrolled after a reboot or powerwash. Until htt
 - Flash it onto your USB.
 - Boot into sh1mmer and click "deprovision device"
 - Reboot your chromebook and enable dev mode.
+- Downgrade to v123 or lower
 - Once in the OOBE enter VT2 by Clicking Ctrl + Alt + --->
 - Run `tpm_manager_client take_ownership`
 - And `cryptohome --action=remove_firmware_management_parameters`
