@@ -50,6 +50,7 @@ Get a board specific prebuilt from:
 - [Archimax's Host (not uploaded yet)](https://dl.archima.xyz/)
 - [Darkn's Host](dl.darkn.bio)
 - [Fanqyxl's Host](https://dl.fanqyxl.net)
+- [Kxtz's Host](https://dl.kxtz.dev)
 
 Flash it using [CRU](https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm?hl=en), [Rufus](https://rufus.ie), or [Balena Etcher](https://etcher.balena.io/) onto your USB.
 
@@ -67,6 +68,7 @@ Many people have been getting re-enrolled after a reboot or powerwash. Until htt
 - [Archimax's Host (not uploaded yet)](https://dl.archima.xyz/)
 - [Darkn's Host](dl.darkn.bio)
 - [Fanqyxl's Host](https://dl.fanqyxl.net)
+- [Kxtz's Host](https://dl.kxtz.dev)
 - Flash it onto your USB.
 - Boot into sh1mmer and click "deprovision device"
 - Reboot your chromebook and enable dev mode.
