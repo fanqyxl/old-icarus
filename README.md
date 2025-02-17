@@ -48,7 +48,7 @@ Reboot the device. You'll boot into verified mode. Once you have your server run
 ## Using Prebuilts
 Get a board specific prebuilt from:
 - [Archimax's Host (not uploaded yet)](https://dl.archima.xyz/)
-- [Darkn's Host](dl.darkn.bio)
+- [Darkn's Host](https://dl.darkn.bio)
 - [Fanqyxl's Host](https://dl.fanqyxl.net)
 - [Kxtz's Host](https://dl.kxtz.dev)
 
@@ -66,7 +66,7 @@ Follow the instructions to create a server.
 Many people have been getting re-enrolled after a reboot or powerwash. Until https://github.com/MunyDev/icarus/pull/15 gets merged here is what you should do if you want to enable dev mode or powerwash.
 - Build yourself a shim or get yourself a prebuilt from
 - [Archimax's Host (not uploaded yet)](https://dl.archima.xyz/)
-- [Darkn's Host](dl.darkn.bio)
+- [Darkn's Host](https://dl.darkn.bio)
 - [Fanqyxl's Host](https://dl.fanqyxl.net)
 - [Kxtz's Host](https://dl.kxtz.dev)
 - Flash it onto your USB.
