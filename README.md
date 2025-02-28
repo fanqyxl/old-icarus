@@ -8,6 +8,7 @@ An exploit for Chrome devices which allows people to unenroll devices with devic
 > DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.<br><br>
 > ANYTHING GOOGLE CAN REMOTELY PERFORM ON YOUR DEVICE, ICARUS CAN BE USED TO DO. AN EXAMPLE OF THIS IS INSTALL EXTENSIONS, SPY, USE YOUR CAMERA, REMOTE INTO YOUR DEVICE, GET YOUR PASSWORDS, AND MORE.<br><br>
 > ONLY SELF HOST ICARUS, NEVER USE A PUBLIC SERVER!
+> -WRITABLE
 
 ## New configs?
 "New configs" have rolled keys. We are testing the compatibility of these new keys for interception.
