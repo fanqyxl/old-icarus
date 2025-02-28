@@ -1,7 +1,8 @@
 # ICARUS
+An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.
 > [!IMPORTANT]
-> IT IS KNOWN THAT ICARUS IS CURRENTLY BROKEN SERVER SIDE. I WILL FIND A FIX SOON + HOST A PUBLIC IP
-An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.  
+> IT IS KNOWN THAT ICARUS IS CURRENTLY BROKEN SERVER SIDE. I WILL FIND A FIX SOON, HOST A SAFE PUBLIC IP, AND REMOVE THE LINES WHERE IT LOGS DEVICE SECRETS (insuring you dont get remotely compromised)
+  
 
 > [!IMPORTANT]
 > DO NOT USE ANY PUBLIC IP ADDRESSES FOR ICARUS AS A PROXY, YOU WILL RISK YOUR DATA and YOU WILL BE REMOTELY COMPROMISED.<br><br>
