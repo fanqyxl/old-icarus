@@ -1,5 +1,6 @@
 # ICARUS
 An exploit for Chrome devices which allows people to unenroll devices with device management interception using a proxy and a custom Certificate Authority.
+WRITEABLE HAS COMPLETELY ABANDONED THIS PROJECT, SO I WILL TRY TO TAKE OVER
 > [!IMPORTANT]
 > IT IS KNOWN THAT ICARUS IS CURRENTLY BROKEN SERVER SIDE. I WILL FIND A FIX SOON, HOST A SAFE PUBLIC IP, AND REMOVE THE LINES WHERE IT LOGS DEVICE SECRETS (insuring you dont get remotely compromised)
   
